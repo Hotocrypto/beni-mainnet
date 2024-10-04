@@ -29,11 +29,12 @@ const NFTMintingPage = () => {
 
         const contract = getContract({
           client,
-          chain: defineChain(84532),
+          chain: defineChain(8453),
           address:process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
         });
 
         const totalClaimedSupply = await getTotalClaimedSupply({ contract });
+        console.log('claimed amount' , totalClaimedSupply)
         setClaimedSupply(Number(totalClaimedSupply));
       } catch (error) {
         console.error("Error fetching total claimed supply:", error);
