@@ -8,11 +8,13 @@ import MintButton from "../../utils/claimButton";
 import { getTotalClaimedSupply } from "thirdweb/extensions/erc721";
 import { createThirdwebClient, getContract } from "thirdweb";
 import { defineChain } from "thirdweb/chains";
+import { SiOpensea } from "react-icons/si";
 
 const NFTMintingPage = () => {
   const [mintAmount, setMintAmount] = useState(1);
   const [claimedSupply, setClaimedSupply] = useState(0); // State to store total claimed supply
-  const [transactionHash, setTransactionHash] = useState('')
+  const [transactionHash, setTransactionHash] = useState('');
+  const [isSoldOut , setIsSoldOut] = useState(false);
   const maxSupply = process.env.NEXT_PUBLIC_TOTAL_SUPPLY;
   const mintPrice = process.env.NEXT_PUBLIC_MINT_COST; // ETH
   const donationPercentage = 0.15;
@@ -36,6 +38,9 @@ const NFTMintingPage = () => {
         const totalClaimedSupply = await getTotalClaimedSupply({ contract });
         console.log('claimed amount' , totalClaimedSupply)
         setClaimedSupply(Number(totalClaimedSupply));
+        if(claimedSupply == maxSupply) {
+          setIsSoldOut(true);
+        }
       } catch (error) {
         console.error("Error fetching total claimed supply:", error);
       }
@@ -90,6 +95,12 @@ const NFTMintingPage = () => {
             >
               <FaTelegram size={24} />
             </a>
+            <a
+              href="https://opensea.io/collection/beni-diamond-paw-society"
+              className="text-[#c9f364] hover:text-white transition-colors"
+            >
+              <SiOpensea size={24} />
+            </a>
           </div>
         </nav>
 {/* mobile nav */}
@@ -114,6 +125,12 @@ const NFTMintingPage = () => {
             >
               <FaTelegram size={24} />
             </a>
+            <a
+              href="https://opensea.io/collection/beni-diamond-paw-society"
+              className="text-[#c9f364] hover:text-white transition-colors"
+            >
+              <SiOpensea size={24} />
+            </a>
           </div>
           </div>
           <div className="text-center tracking-wider">
@@ -132,7 +149,7 @@ const NFTMintingPage = () => {
             Beni Diamond Paw Society
           </h1>
           <h3 className="text-xl sm:text-2xl text-[#c9f364] text-center mb-8">
-            Minting Is Live!
+            {isSoldOut ? 'Sold Out!':'Minting Is Live!'}
           </h3>
 
           <div className="flex flex-col sm:flex-row gap-8">
@@ -185,7 +202,7 @@ const NFTMintingPage = () => {
                 <FaWallet className='w-6 h-6 mr-3'/>
                 <p>Connect Wallet to Mint</p>
               </button> */}
-              {activeAccount ? (
+              {activeAccount && !isSoldOut ? (
                 <div className="flex justify-between items-center  w-full">
                   <ConnectWallet />
                                   <MintButton
@@ -193,7 +210,13 @@ const NFTMintingPage = () => {
                 onTransactionConfirmed={handleTransactionConfirmed}
                 />
                 </div>
-              ) : (
+              ) :
+              isSoldOut? (
+                <button className="w-full opacity-70 cursor-not-allowed flex items-start justify-center bg-gradient-to-r from-[#c9f364] to-yellow-300 text-black tracking-wide c9f364 font-bold py-3 px-6  text-lg hover:from-yellow-300 hover:to-[#c9f364] transition-all duration-200 transform hover:-translate-y-1 shadow-2xl">
+                <p>We Are Sold Out!</p>
+              </button>
+              ):
+              (
                 <ConnectWallet />
               )}
             </div>
