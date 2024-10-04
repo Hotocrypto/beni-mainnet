@@ -10,7 +10,7 @@ const mouldyCheese = localFont({
 export default function Home() {
   return (
     <div
-      className={`${mouldyCheese.variable} flex  items-center justify-center h-screen w-screen font-[family-name:var(--font-mouldy-cheese)] bg-custom-bg
+      className={`${mouldyCheese.variable} flex  sm:items-center sm:justify-center h-screen w-screen font-[family-name:var(--font-mouldy-cheese)] bg-custom-bg
         bg-cover bg-center bg-no-repeat sm:overflow-hidden overflow-y-auto`}
     >
       <h1 className="text-5xl">
