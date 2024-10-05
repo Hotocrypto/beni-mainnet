@@ -194,7 +194,7 @@ const NFTMintingPage = () => {
               {activeAccount ? (
                 <p className="text-[16px] md:text-[20px] text-white hover:text-[#c9f364] my-4 md:my-0 text-center md:text-start">{transactionHash ? (
                   <a href={`https://base.blockscout.com/tx/${transactionHash}`}>Transaction completed ✅ View on block explorer →</a>
-                ) : 'Enjoy your mint!'}</p>
+                ) : 'Enjoy Your Mint!'}</p>
               ) : (
                 <h1 className="text-[16px] my-4">Connect Wallet To Mint Your NFT!</h1>
               )}
