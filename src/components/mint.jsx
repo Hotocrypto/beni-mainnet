@@ -55,7 +55,7 @@ const NFTMintingPage = () => {
     setMintAmount((prev) => Math.max(prev - 1, 1));
 
   const calculateDonation = () => {
-    return (claimedSupply * mintPrice * donationPercentage).toFixed(2);
+    return (claimedSupply * mintPrice * donationPercentage).toFixed(4);
   };
 
   const handleTransactionConfirmed = (transactionHash) => {
