@@ -37,7 +37,7 @@ export default function MintButton({ quantity, onTransactionConfirmed }) {
               fontSize:'20px'
             }}
         >
-            Mint now
+            Mint Now
         </ClaimButton>
     );
 }
