@@ -76,10 +76,10 @@ const NFTMintingPage = () => {
           </a>
           <div className="text-center tracking-wider">
             <p className="text-sm">
-              15% of proceeds will be donated to paws in need
+              15% Of Proceeds Will Be Donated To Paws In Need
             </p>
             <p className="text-lg font-bold">
-              Donations raised - {calculateDonation()} ETH
+              Donations Raised - {calculateDonation()} ETH
             </p>
           </div>
           <div className="flex space-x-4">
@@ -135,10 +135,10 @@ const NFTMintingPage = () => {
           </div>
           <div className="text-center tracking-wider">
             <p className="text-sm">
-              15% of proceeds will be donated to paws in need
+              15% Of Proceeds Will Be Donated To Paws In Need
             </p>
             <p className="text-lg font-bold">
-            Donations raised - {calculateDonation()} ETH
+            Donations Raised - {calculateDonation()} ETH
             </p>
           </div>
         </nav>
@@ -186,7 +186,7 @@ const NFTMintingPage = () => {
                 <div className="border-t border-b border-white py-4">
                   <div className="flex justify-between text-xl text-[#c9f364]">
                     <span>Total</span>
-                    <span>{(mintAmount * mintPrice).toFixed(2)} ETH + GAS</span>
+                    <span>{(mintAmount * mintPrice).toFixed(2)} BASE ETH + GAS</span>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ const NFTMintingPage = () => {
               ) :
               isSoldOut? (
                 <button className="w-full opacity-70 cursor-not-allowed flex items-start justify-center bg-gradient-to-r from-[#c9f364] to-yellow-300 text-black tracking-wide c9f364 font-bold py-3 px-6  text-lg hover:from-yellow-300 hover:to-[#c9f364] transition-all duration-200 transform hover:-translate-y-1 shadow-2xl">
-                <p>We Are Sold Out!</p>
+                <p>SOLD OUT!</p>
               </button>
               ):
               (
