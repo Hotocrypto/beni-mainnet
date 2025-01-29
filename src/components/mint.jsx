@@ -66,7 +66,7 @@ const NFTMintingPage = () => {
 
   return (
     <div className="flex items-center justify-center mih-h-screen  text-white py-4 sm:py-0">
-      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-35 backdrop-filter backdrop-blur-[5px] border-2 border-[#c9f364] rounded-lg shadow-2xl">
+      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-45 backdrop-filter backdrop-blur-[5px] border-4 border-[#c9f364] rounded-lg shadow-2xl">
         <nav className="hidden sm:flex flex-col sm:flex-row justify-between items-center p-4 bg-[#1769ff] bg-opacity-85 border-b border-white">
           <a
             href="https://benithedog.com"
