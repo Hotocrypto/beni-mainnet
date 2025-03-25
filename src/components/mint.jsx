@@ -81,17 +81,6 @@ const NFTMintingPage = () => {
             <p className="text-lg font-bold">
               Donations Raised - {calculateDonation()} ETH
             </p>
-            <a href="https://x.com/benionbase/status/1884306102470271015" className="text-lg mt-0" style={{
-  color: 'black', // changed to black for contrast with gold background,
-  textDecoration: 'none',
-  display: 'inline-block',
-  padding: '5px 10px',
-  borderRadius: '5px',
-  backgroundColor: 'gold', // added gold background
-   transform: 'translateY(-10px)',
-}}>
-  🎟️ LIVE 1ETH RAFFLE AT MINT 1050! 🎟️
-</a>
           </div>
           <div className="flex space-x-4">
             <a
@@ -151,17 +140,6 @@ const NFTMintingPage = () => {
             <p className="text-lg font-bold">
             Donations Raised - {calculateDonation()} ETH
             </p>
-            <a href="https://x.com/benionbase/status/1884306102470271015" className="text-sm mt-0" style={{
-  color: 'black', // changed to black for contrast with gold background
-  textDecoration: 'none',
-  display: 'inline-block',
-  padding: '5px 10px',
-  borderRadius: '5px',
-  backgroundColor: 'gold', // added gold background
-   transform: 'translateY(-10px)',
-}}>
-  🎟️ LIVE 1ETH RAFFLE AT MINT 1050! 🎟️
-</a>
           </div>
         </nav>
 
