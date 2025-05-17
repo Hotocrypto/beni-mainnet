@@ -66,10 +66,10 @@ const NFTMintingPage = () => {
 
   return (
     <div className="flex items-center justify-center mih-h-screen  text-white py-4 sm:py-0">
-      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-45 backdrop-filter backdrop-blur-[5px] border-4 border-[#c9f364] rounded-lg shadow-2xl">
+      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-45 backdrop-filter backdrop-blur-[5px] border-8 border-[#c9f364] rounded-lg shadow-2xl">
         <nav className="hidden sm:flex flex-col sm:flex-row justify-between items-center p-4 bg-[#1769ff] bg-opacity-85 border-b border-white">
           <a
-            href="https://benithedog.com"
+            href="https://beniverse.fun"
             className="text-[#c9f364] hover:text-white transition-colors text-xl"
           >
             <img src="/Logo.png" className="h-12 w-auto" />
@@ -87,19 +87,19 @@ const NFTMintingPage = () => {
               href="https://x.com/benionbase"
               className="text-[#c9f364] hover:text-white transition-colors"
             >
-              <FaXTwitter size={24} />
+              <FaXTwitter size={34} />
             </a>
             <a
               href="https://t.me/benibasecto"
               className="text-[#c9f364] hover:text-white transition-colors"
             >
-              <FaTelegram size={24} />
+              <FaTelegram size={34} />
             </a>
             <a
               href="https://opensea.io/collection/beni-diamond-paw-society"
               className="text-[#c9f364] hover:text-white transition-colors"
             >
-              <SiOpensea size={24} />
+              <SiOpensea size={34} />
             </a>
           </div>
         </nav>
@@ -232,7 +232,9 @@ const NFTMintingPage = () => {
             </a>
           </div>
         </div>
+        
       </div>
+    
     </div>
   );
 };
