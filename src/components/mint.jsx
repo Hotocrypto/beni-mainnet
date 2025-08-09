@@ -65,8 +65,8 @@ const NFTMintingPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mih-h-screen  text-white py-4 sm:py-0">
-      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-45 backdrop-filter backdrop-blur-[5px] border-8 border-[#c9f364] rounded-lg shadow-2xl">
+    <div className="flex items-center justify-center min-h-screen text-white py-4 sm:py-0">
+      <div className="w-full max-w-4xl bg-blue-700 bg-opacity-45 backdrop-filter backdrop-blur-[5px] border-4 sm:border-8 border-[#c9f364] rounded-lg shadow-2xl">
         <nav className="hidden sm:flex flex-col sm:flex-row justify-between items-center p-4 bg-[#1769ff] bg-opacity-85 border-b border-white">
           <a
             href="https://beniverse.fun"
@@ -144,75 +144,75 @@ const NFTMintingPage = () => {
         </nav>
 
 
-        <div className="p-6 sm:p-10">
-          <h1 className="text-2xl sm:text-4xl text-center mb-2">
+        <div className="p-4 sm:p-6 md:p-10">
+          <h1 className="text-xl sm:text-2xl md:text-4xl text-center mb-2">
             Beni Diamond Paw Society
           </h1>
-          <h3 className="text-xl sm:text-2xl text-[#c9f364] text-center mb-8">
+          <h3 className="text-lg sm:text-xl md:text-2xl text-[#c9f364] text-center mb-6 sm:mb-8">
             {isSoldOut ? 'Sold Out!':'Minting Is Live!'}
           </h3>
 
-          <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
             <div className="w-full sm:w-1/2 relative flex items-center justify-center sm:justify-start">
-              <div className="absolute top-2 sm:left-2 left-14 bg-black bg-opacity-50 text-white text-sm px-3 py-1 rounded">
+              <div className="absolute top-2 left-2 sm:left-2 bg-black bg-opacity-50 text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded">
                 <span className="font-semibold">{claimedSupply}</span> /{" "}
                 {maxSupply}
               </div>
               <img
                 src="/nfts.gif"
                 alt="NFT Preview"
-                className="w-[70%] h-auto rounded-lg shadow-lg border border-white"
+                className="w-[80%] sm:w-[70%] h-auto rounded-lg shadow-lg border border-white"
               />
             </div>
 
             <div className="w-full sm:w-1/2 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
                   <button
                     onClick={decrementMintAmount}
-                    className="bg-[#c9f364] hover:bg-yellow-300 text-[#1769ff] rounded-full p-2 transition-colors"
+                    className="bg-[#c9f364] hover:bg-yellow-300 text-[#1769ff] rounded-full p-2 sm:p-2 transition-colors"
                   >
-                    <Minus size={24} />
+                    <Minus size={20} className="sm:w-6 sm:h-6" />
                   </button>
-                  <span className="text-4xl font-bold">{mintAmount}</span>
+                  <span className="text-3xl sm:text-4xl font-bold">{mintAmount}</span>
                   <button
                     onClick={incrementMintAmount}
-                    className="bg-[#c9f364] hover:bg-yellow-300 text-[#1769ff] rounded-full p-2 transition-colors"
+                    className="bg-[#c9f364] hover:bg-yellow-300 text-[#1769ff] rounded-full p-2 sm:p-2 transition-colors"
                   >
-                    <Plus size={24} />
+                    <Plus size={20} className="sm:w-6 sm:h-6" />
                   </button>
                 </div>
 
-                <div className="border-t border-b border-white py-4">
-                  <div className="flex justify-between text-xl text-[#c9f364]">
+                <div className="border-t border-b border-white py-3 sm:py-4">
+                  <div className="flex justify-between text-lg sm:text-xl text-[#c9f364]">
                     <span>Total</span>
-                    <span>{(mintAmount * mintPrice).toFixed(2)} BASE ETH + GAS</span>
+                    <span className="text-right">{(mintAmount * mintPrice).toFixed(2)} BASE ETH + GAS</span>
                   </div>
                 </div>
               </div>
 
               {activeAccount ? (
-                <p className="text-[16px] md:text-[20px] text-white hover:text-[#c9f364] my-4 md:my-0 text-center md:text-start">{transactionHash ? (
+                <p className="text-sm sm:text-base md:text-lg text-white hover:text-[#c9f364] my-3 sm:my-4 md:my-0 text-center md:text-start">{transactionHash ? (
                   <a href={`https://base.blockscout.com/tx/${transactionHash}`}>Transaction completed ✅ View on block explorer →</a>
-                ) : 'Enjoy Your Mint!'}</p>
+                ) : 'Thanks For Minting!'}</p>
               ) : (
-                <h1 className="text-[16px] my-4">Connect Wallet To Mint Your NFT!</h1>
+                <h1 className="text-sm sm:text-base my-3 sm:my-4">Connect Wallet To Mint Your NFT!</h1>
               )}
               {/* <button className="w-full flex items-start justify-center bg-gradient-to-r from-[#c9f364] to-yellow-300 text-black tracking-wide c9f364 font-bold py-3 px-6  text-lg hover:from-yellow-300 hover:to-[#c9f364] transition-all duration-200 transform hover:-translate-y-1 shadow-2xl">
                 <FaWallet className='w-6 h-6 mr-3'/>
                 <p>Connect Wallet to Mint</p>
               </button> */}
               {activeAccount && !isSoldOut ? (
-                <div className="flex justify-between items-center  w-full">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 w-full">
                   <ConnectWallet />
-                                  <MintButton
-                quantity={mintAmount} 
-                onTransactionConfirmed={handleTransactionConfirmed}
-                />
+                  <MintButton
+                    quantity={mintAmount} 
+                    onTransactionConfirmed={handleTransactionConfirmed}
+                  />
                 </div>
               ) :
               isSoldOut? (
-                <button className="w-full opacity-70 cursor-not-allowed flex items-start justify-center bg-gradient-to-r from-[#c9f364] to-yellow-300 text-black tracking-wide c9f364 font-bold py-3 px-6  text-lg hover:from-yellow-300 hover:to-[#c9f364] transition-all duration-200 transform hover:-translate-y-1 shadow-2xl">
+                <button className="w-full opacity-70 cursor-not-allowed flex items-start justify-center bg-gradient-to-r from-[#c9f364] to-yellow-300 text-black tracking-wide c9f364 font-bold py-3 px-6 text-base sm:text-lg hover:from-yellow-300 hover:to-[#c9f364] transition-all duration-200 transform hover:-translate-y-1 shadow-2xl">
                 <p>SOLD OUT!</p>
               </button>
               ):
@@ -222,7 +222,7 @@ const NFTMintingPage = () => {
             </div>
           </div>
 
-          <div className="mt-8 text-center text-sm">
+          <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm">
             <p>Contract Address</p>
             <a
               href={`https://base.blockscout.com/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}

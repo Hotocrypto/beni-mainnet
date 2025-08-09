@@ -90,3 +90,31 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Microdot radial texture backgrounds */
+.microdot-bg-blue {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #0052FF 0%, #2563eb 100%);
+  background-size: 10px 10px, cover;
+  background-attachment: fixed;
+}
+
+.microdot-bg-purple {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #8C52FF 0%, #5f1aff 100%);
+  background-size: 10px 10px, cover;
+  background-attachment: fixed;
+}
+
+/* Paw print overlay */
+.pawprint-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: url('/bg.png') repeat;
+  background-size: cover;
+  opacity: 1;
+}
