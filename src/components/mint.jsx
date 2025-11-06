@@ -76,10 +76,20 @@ const NFTMintingPage = () => {
           </a>
           <div className="text-center tracking-wider">
             <p className="text-sm">
-              15% Of Proceeds Will Be Donated To Paws In Need
+              15% Of Proceeds Will Be Donated To Paws In Need{' '}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(atob('aHR0cHM6Ly94LmNvbS9iZW5pb25iYXNlL3N0YXR1cy8xODc3OTI1NDA3MDE1NDkzNjQw'), '_blank');
+                }}
+                className="text-[#c9f364] hover:text-white transition-colors cursor-pointer"
+              >
+                Past Donations
+              </a>
             </p>
             <p className="text-lg font-bold">
-              Donations Raised - {calculateDonation()} ETH
+              Raised - {calculateDonation()} ETH
             </p>
           </div>
           <div className="flex space-x-4">
@@ -135,10 +145,20 @@ const NFTMintingPage = () => {
           </div>
           <div className="text-center tracking-wider">
             <p className="text-sm">
-              15% Of Proceeds Will Be Donated To Paws In Need
+              15% Of Proceeds Will Be Donated To Paws In Need{' '}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(atob('aHR0cHM6Ly94LmNvbS9iZW5pb25iYXNlL3N0YXR1cy8xODc3OTI1NDA3MDE1NDkzNjQw'), '_blank');
+                }}
+                className="text-[#c9f364] hover:text-white transition-colors cursor-pointer"
+              >
+                Past Donations
+              </a>
             </p>
             <p className="text-lg font-bold">
-            Donations Raised - {calculateDonation()} ETH
+            Raised - {calculateDonation()} ETH
             </p>
           </div>
         </nav>
